@@ -1,0 +1,11 @@
+#contentPlayer {
+    /*     background-color: orange; */
+    width: 100vw;
+    height: 75vh;
+    background-image: url(assets/2.jpg);
+    background-size: cover;
+flex-direction: column; 
+flex-wrap: wrap;
+    display: flex;
+    color: white;
+  }

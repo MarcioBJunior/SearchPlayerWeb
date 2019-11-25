@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="playerStyle.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>SearchPlayer</title>
+</head>
+
+<body onload="loadPlayer()">
+
+  <div id="wrapper">
+    <div id="header">
+      <div id="logo"><span class="display-4">SearchPlayer</span></div>
+      <div id="options">
+        <a href="/howitworks.html">Como funciona?</a>
+        <a href="/contact.html">Contatos</a>
+      </div>
+
+    </div>
+   
+    <div id="contentPlayer">     
+        <div id="infoBox">
+            <ul>
+              <h3><span id="nomeId"></span></h3>  
+              <h4>Informações Pessoais</h4>
+                <li>Data de Nascimento: <span id="dataNascimentoId"></span></li>
+                <li>Peso: <span id="pesoId"></span></li>
+                <li>Altura: <span id="alturaId"></span></li>
+                <li>Nacionalidade: <span id="nacionalidadeId"></span></li>
+                <li>Local de Nascimento: <span id="localNascimentoId"></span></li>
+              </ul>
+              <ul>
+                <h4>Informações Profissionais</h4>
+                <li>Time: <span id="timeId"></span></li>
+                <li>Número: <span id="numeroId"></span></li>
+                <li>Salário: <span id="salarioId"></span></li>
+                <li>Chuteira: <span id="chuteiraId"></span></li>
+                <li>Posição favorita: <span id="posicaoFavoritaId"></span></li>
+              </ul>
+              <ul>
+                <h4>Redes Sociais</h4>
+                <li>Twitter: <span id="twitterId"></span></li>
+                <li>Instagram: <span id="instagramId"></span></li>
+                <li>Facebook: <span id="facebookId"></span></li>
+              </ul>
+        </div>
+        <div id="midiaBox">
+          <div id="imageBox">
+            <img id="imagemId" align="center"style="width:150px; height:150px; border-radius:50%;" />
+          </div>
+          <div id="videoBox">
+
+          </div>
+        </div>
+      </div>
+    <div id="footer"> <span id="">SearchPlayer 2019 - Todos direitos reservados ®</p>
+    </div>
+
+  </div>
+
+
+</body>
+
+<script>
+  var PARAMETER = "playerName";
+
+  function loadPlayer() {
+    let playerName = queryString(PARAMETER);
+    searchPlayer(playerName);
+  }
+
+  function queryString() {
+    var loc = location.search.substring(1, location.search.length);
+    var param_value = false;
+    var params = loc.split("&");
+    for (i = 0; i < params.length; i++) {
+      param_name = params[i].substring(0, params[i].indexOf("="));
+      if (param_name == PARAMETER) {
+        param_value = params[i].substring(params[i].indexOf("=") + 1);
+      }
+    }
+    if (param_value) {
+      return param_value;
+    } else {
+      return undefined;
+    }
+  }
+  function searchPlayer(playerName) {
+    let urlPlayer =
+      "https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?p=" +
+      playerName;
+
+    $(document).ready(function () {
+      $.get(urlPlayer, function (playerJson) {
+        obj = playerJson.player[0];
+        var player = {
+          nome: obj.strPlayer,
+          dataNascimento: obj.dateBorn,
+          peso: obj.strWeight,
+          altura: obj.strHeight,
+          nacionalidade: obj.strNationality,
+          localNascimento: obj.strBirthLocation,
+          time: obj.strTeam,
+          numero: obj.strNumber,
+          salario: obj.strWage,
+          chuteira: obj.strKit,
+          posicaoFavorita: obj.strPosition,
+          assinatura: obj.strSigning,
+          twitter: obj.strTwitter,
+          instagram: obj.strInstagram,
+          facebook: obj.strFacebook,
+          foto: obj.strThumb
+        };
+        designPlayer(player);
+      });
+    });
+  }
+
+  function designPlayer(player) {
+    document.getElementById("nomeId").innerText = player.nome;
+    document.getElementById("dataNascimentoId").innerText =
+      player.dataNascimento;
+    document.getElementById("pesoId").innerText = player.peso;
+    document.getElementById("alturaId").innerText = player.altura;
+    document.getElementById("nacionalidadeId").innerText =
+      player.nacionalidade;
+    document.getElementById("localNascimentoId").innerText =
+      player.localNascimento;
+
+    document.getElementById("timeId").innerText = player.time;
+    document.getElementById("numeroId").innerText = player.numero;
+    if (player.salario) {
+      document.getElementById("salarioId").innerText = player.salario;
+    } else {
+      document.getElementById("salarioId").innerText = "Não informado";
+    }
+
+    document.getElementById("chuteiraId").innerText = player.chuteira;
+    document.getElementById("posicaoFavoritaId").innerText =
+      player.posicaoFavorita;
+
+    document.getElementById("twitterId").innerText = player.twitter;
+    document.getElementById("instagramId").innerText = player.instagram;
+    document.getElementById("facebookId").innerText = player.facebook;
+
+    document.getElementById("imagemId").src = player.foto;
+  }
+  function voltarMenu() {
+    window.location = "index.html"
+  }
+</script>
+
+</html>

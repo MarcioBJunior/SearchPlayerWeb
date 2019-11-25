@@ -1,11 +1,55 @@
+body{
+    background-image: url(assets/1.jpg);
+    background-size: cover;
+}
+#header{
+    font-family: 'Abel', sans-serif;
+   
+}
 #contentPlayer {
-    /*     background-color: orange; */
+
     width: 100vw;
     height: 75vh;
-    background-image: url(assets/2.jpg);
-    background-size: cover;
-flex-direction: column; 
-flex-wrap: wrap;
+    flex-direction: column; 
+    flex-wrap: wrap;
     display: flex;
     color: white;
+  }
+
+  #infobox ul, h4{
+      font-family: 'Abel', sans-serif;
+      list-style: none;
+      background-color: white;
+      text-align: center;
+      color: black;
+      padding-left: 2%;
+        width: 70%;
+      border-radius: 10px;
+      text-transform: capitalize;
+     
+  }
+
+  #infobox ul, li{
+    list-style: none;
+    font-size: 105%;
+    
+   
+}
+  #infobox ul, h3{
+      margin-left: 25%;
+      font-size: 130%;
+      font-family: 'Abel', sans-serif;
+  }
+  #midiaBox h3{
+      margin-left: 53%;
+}
+   #imagemId{
+  
+      margin-left: 45%;
+  }
+  #footer{
+      font-size: 90%;
+      
+      padding: -15px;
+      font-family: 'Abel', sans-serif;
   }

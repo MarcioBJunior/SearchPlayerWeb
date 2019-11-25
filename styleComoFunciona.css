@@ -1,0 +1,38 @@
+  #logo a {
+    
+    font-size: 90%;
+    
+  }
+  #logo a:hover{
+    text-decoration: none;
+   color: rgb(0, 189, 79);
+    font-size: 90%;
+    
+  }
+
+  #header a:hover{
+    text-decoration: none;
+    color: rgb(0, 189, 79);
+
+    
+  }
+#contentInfo h1{
+    color: white;
+    font-family: 'Abel', sans-serif;
+  padding-left: 25%;
+  padding-right: 25%;
+  text-align: center;   
+  padding-top: 1%;
+  padding-bottom: 8%;
+}
+#contentInfo p{
+    color: white;
+    font-family: 'Abel', sans-serif;
+  padding-left: 23%;
+  padding-right: 23%;
+  text-align: justify;
+ 
+  padding-bottom: 9%;
+}
+
+ 

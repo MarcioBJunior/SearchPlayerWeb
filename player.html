@@ -7,19 +7,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
+    <link rel="icon" type="imagem/png" href="assets/icon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="playerStyle.css" />
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <title>SearchPlayer</title>
+  <title id="nomeId"></title>
 </head>
 
 <body onload="loadPlayer()">
 
   <div id="wrapper">
     <div id="header">
-      <div id="logo"><span class="display-4">SearchPlayer</span></div>
+      <div id="logo"><a href="index.html"><span class="display-4">SearchPlayer</span></a></div>
       <div id="options">
-        <a href="/howitworks.html">Como funciona?</a>
-        <a href="/contact.html">Contatos</a>
+          <a href="como_funciona.html">Como funciona?</a>
+          <a href="contatos.html">Contatos</a>
       </div>
 
     </div>
@@ -27,7 +29,7 @@
     <div id="contentPlayer">     
         <div id="infoBox">
             <ul>
-              <h3><span id="nomeId"></span></h3>  
+              <h3>Resultado para: <span id="nomeId"></span></h3>  
               <h4>Informações Pessoais</h4>
                 <li>Data de Nascimento: <span id="dataNascimentoId"></span></li>
                 <li>Peso: <span id="pesoId"></span></li>
@@ -51,15 +53,18 @@
               </ul>
         </div>
         <div id="midiaBox">
+            
           <div id="imageBox">
-            <img id="imagemId" align="center"style="width:150px; height:150px; border-radius:50%;" />
+              <h3>FOTO:</h3>
+            <img id="imagemId" align="center" style="width:150px; height:150px; border-radius:30%;" />
           </div>
           <div id="videoBox">
-
+              <h3>VÍDEOS:</h3>
+              <h3>Em breve!</h3>
           </div>
         </div>
       </div>
-    <div id="footer"> <span id="">SearchPlayer 2019 - Todos direitos reservados ®</p>
+    <div id="footer"> <span id="">SearchPlayer 2019 - Todos direitos reservados ®</span>
     </div>
 
   </div>

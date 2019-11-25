@@ -16,6 +16,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: 'Abel', sans-serif;
   align-items: center;
 
 }
@@ -35,6 +36,24 @@ body {
 #logo span{
     font-size: 2.5em;
 }
+#logo a {
+    
+  font-size: 90%;
+  
+}
+#logo a:hover{
+  text-decoration: none;
+ color: rgb(0, 189, 79);
+  font-size: 90%;
+  
+}
+
+#header a:hover{
+  text-decoration: none;
+  color: rgb(0, 189, 79);
+
+  
+}
 #header #options {
   width: 25vw;
   display: flex;
@@ -47,7 +66,7 @@ body {
   height: 75vh;
   background-image: url(assets/2.jpg);
   background-size: cover;
-
+  font-family: 'Abel', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -80,10 +99,12 @@ body {
   font-size: 1.2em;
   font-weight: 200;
 }
+
 #footer {
   background-color: black;
   color: white;
   width: 100vw;
+  font-family: 'Abel', sans-serif;
   height: 10vh;
   display: flex;
   flex-direction: row;
